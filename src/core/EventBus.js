@@ -14,6 +14,14 @@ export class EventBus {
     return () => this.off(event, callback);
   }
 
+  once(event, callback) {
+    const unsub = this.on(event, (data) => {
+      unsub();
+      callback(data);
+    });
+    return unsub;
+  }
+
   off(event, callback) {
     if (this.listeners.has(event)) {
       this.listeners.get(event).delete(callback);

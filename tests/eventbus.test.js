@@ -28,6 +28,16 @@ describe('EventBus', () => {
     assert.strictEqual(count2, 1);
   });
 
+  test('should subscribe once and auto-unsubscribe', () => {
+    const bus = new EventBus();
+    let count = 0;
+    bus.once('ping', () => count++);
+
+    bus.emit('ping');
+    bus.emit('ping');
+    assert.strictEqual(count, 1);
+  });
+
   test('should unsubscribe cleanly', () => {
     const bus = new EventBus();
     let count = 0;

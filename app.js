@@ -1,7 +1,7 @@
 /**
  * iOS PWA Foundation - Bundled Runtime
  * 100% Zero Runtime Dependencies • Procedural Audio & WebKit Bridges
- * Generated: 2026-10-24T22:45:41.213Z
+ * Generated: 2026-10-24T22:50:42.896Z
  */
 (() => {
   'use strict';
@@ -21,6 +21,14 @@ class EventBus {
     }
     this.listeners.get(event).add(callback);
     return () => this.off(event, callback);
+  }
+
+  once(event, callback) {
+    const unsub = this.on(event, (data) => {
+      unsub();
+      callback(data);
+    });
+    return unsub;
   }
 
   off(event, callback) {
