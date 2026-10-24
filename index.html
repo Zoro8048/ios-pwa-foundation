@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PWA Kit">
+  <meta name="theme-color" content="#000000">
+
+  <title>iOS PWA Foundation • Shared Component Toolkit</title>
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Responsive Native Shell -->
+  <div class="app-shell">
+    <!-- Header (Dynamic Island & Notch Safe) -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-icon-badge">📱</div>
+        <div class="brand-title">iOS PWA <span>Foundation</span></div>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon" id="btn-toggle-sound" title="Sound & Haptics" aria-label="Toggle Sound">
+          🔊
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Scrollable Stage -->
+    <main class="main-content">
+      <!-- Hardware & Platform Diagnostics -->
+      <section class="diagnostics-hero">
+        <div class="diag-title-row">
+          <div class="diag-title">⚡ Platform Diagnostics</div>
+          <span style="font-size:0.75rem; color:var(--text-secondary); font-family:var(--font-mono);">HIG v1.0</span>
+        </div>
+        <div class="diag-pills" id="diagnostics-pills">
+          <!-- Populated by DeviceDetector -->
+        </div>
+      </section>
+
+      <!-- Segmented Control Demo -->
+      <section class="ios-group-container">
+        <div class="ios-group-header">Segmented Switch</div>
+        <div id="segmented-demo-slot"></div>
+      </section>
+
+      <!-- Procedural Audio & Haptic Soundboard -->
+      <section class="ios-group-container">
+        <div class="ios-group-header">Micro-Haptics & Audio Synthesizer</div>
+        <div class="haptic-grid">
+          <button type="button" class="haptic-btn" id="btn-haptic-tap">
+            <span class="haptic-btn-icon">👆</span>
+            <span class="haptic-btn-label">Tap (4ms)</span>
+          </button>
+          <button type="button" class="haptic-btn" id="btn-haptic-tick">
+            <span class="haptic-btn-icon">⏱️</span>
+            <span class="haptic-btn-label">Tick (6ms)</span>
+          </button>
+          <button type="button" class="haptic-btn" id="btn-haptic-impact">
+            <span class="haptic-btn-icon">💥</span>
+            <span class="haptic-btn-label">Impact (15ms)</span>
+          </button>
+          <button type="button" class="haptic-btn" id="btn-haptic-success">
+            <span class="haptic-btn-icon">✨</span>
+            <span class="haptic-btn-label">Success Bell</span>
+          </button>
+          <button type="button" class="haptic-btn" id="btn-haptic-scanner">
+            <span class="haptic-btn-icon">🎯</span>
+            <span class="haptic-btn-label">Laser Chirp</span>
+          </button>
+          <button type="button" class="haptic-btn" id="btn-haptic-warning">
+            <span class="haptic-btn-icon">⚠️</span>
+            <span class="haptic-btn-label">Warning Thud</span>
+          </button>
+        </div>
+        <div class="ios-group-footer">
+          Procedural Web Audio synthesis produces crisp tactile micro-clicks on iOS speakers without audio asset latency.
+        </div>
+      </section>
+
+      <!-- Gestures & Bottom Sheets -->
+      <section class="ios-group-container">
+        <div class="ios-group-header">Gestures & Action Sheets</div>
+        <div class="ios-inset-card">
+          <div class="ios-table-row" id="row-demo-sheet">
+            <div class="row-leading">
+              <span class="row-icon">📑</span>
+              <div class="row-label-group">
+                <span class="row-title">Interactive Bottom Sheet</span>
+                <span class="row-subtitle">Swipe down to dismiss with grabber handle</span>
+              </div>
+            </div>
+            <div class="row-trailing">
+              <span class="row-chevron">›</span>
+            </div>
+          </div>
+
+          <div class="ios-table-row last-row" id="row-demo-camera">
+            <div class="row-leading">
+              <span class="row-icon">📷</span>
+              <div class="row-label-group">
+                <span class="row-title">Camera & Barcode Scanner</span>
+                <span class="row-subtitle">Native BarcodeDetector with viewfinder</span>
+              </div>
+            </div>
+            <div class="row-trailing">
+              <span class="row-chevron">›</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Native Hardware Bridges -->
+      <section class="ios-group-container">
+        <div class="ios-group-header">Hardware Bridges</div>
+        <div class="ios-inset-card">
+          <div class="ios-table-row" id="row-demo-share">
+            <div class="row-leading">
+              <span class="row-icon">↗️</span>
+              <div class="row-label-group">
+                <span class="row-title">Web Share API</span>
+                <span class="row-subtitle">Native AirDrop & iOS Messages sheet</span>
+              </div>
+            </div>
+            <div class="row-trailing">
+              <span class="ios-badge">Share</span>
+            </div>
+          </div>
+
+          <div class="ios-table-row">
+            <div class="row-leading">
+              <span class="row-icon">☀️</span>
+              <div class="row-label-group">
+                <span class="row-title">Screen Wake Lock</span>
+                <span class="row-subtitle">Prevents screen dimming during active use</span>
+              </div>
+            </div>
+            <div class="row-trailing">
+              <label class="ios-switch">
+                <input type="checkbox" id="switch-wakelock">
+                <span class="ios-switch-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="ios-table-row" id="row-demo-badge">
+            <div class="row-leading">
+              <span class="row-icon">🔴</span>
+              <div class="row-label-group">
+                <span class="row-title">App Icon Badging</span>
+                <span class="row-subtitle">Tap to increment Home Screen badge</span>
+              </div>
+            </div>
+            <div class="row-trailing">
+              <span class="ios-badge">+1</span>
+            </div>
+          </div>
+
+          <div class="ios-table-row last-row" id="btn-clear-badge">
+            <div class="row-leading">
+              <span class="row-icon">🧹</span>
+              <span class="row-title text-destructive">Clear App Badge</span>
+            </div>
+            <div class="row-trailing">
+              <span class="row-chevron">›</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Local-First Storage -->
+      <section class="ios-group-container">
+        <div class="ios-group-header">Local-First Persistence</div>
+        <div class="ios-inset-card">
+          <div class="ios-table-row last-row" id="row-demo-export">
+            <div class="row-leading">
+              <span class="row-icon">💾</span>
+              <div class="row-label-group">
+                <span class="row-title">Export JSON Backup</span>
+                <span class="row-subtitle">Schema-versioned zero-cloud backup</span>
+              </div>
+            </div>
+            <div class="row-trailing">
+              <span class="ios-badge">Download</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Legal & Non-Commercial Footer Bar (Home Indicator Safe) -->
+    <footer class="app-legal-footer">
+      <span class="legal-footer-text">Free Non-Commercial Toolkit • Zero Revenue</span>
+      <button type="button" class="legal-notice-btn" id="btn-open-legal" aria-label="Legal Notice">
+        ℹ️ Legal Notice
+      </button>
+    </footer>
+  </div>
+
+  <!-- Modal Presentation Layer -->
+  <div class="modal-layer hidden" id="modal-container"></div>
+
+  <!-- Toast Layer -->
+  <div class="toast-layer" id="toast-container"></div>
+
+  <!-- Bundled Runtime -->
+  <script src="app.js"></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

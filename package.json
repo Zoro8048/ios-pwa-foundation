@@ -1,0 +1,22 @@
+{
+  "name": "ios-pwa-foundation",
+  "version": "1.0.0",
+  "description": "Zero-dependency iOS-first Progressive Web App design system, hardware bridges, and shared component primitives.",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/bundle.js && node --test tests/*.test.js",
+    "build": "node scripts/bundle.js",
+    "start": "npx -y serve . -p 8080"
+  },
+  "keywords": [
+    "ios-pwa",
+    "design-system",
+    "apple-hig",
+    "safe-area",
+    "web-audio-haptics",
+    "bottom-sheet",
+    "local-first"
+  ],
+  "author": "Keerthan",
+  "license": "MIT"
+}
