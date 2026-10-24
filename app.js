@@ -1,7 +1,7 @@
 /**
  * iOS PWA Foundation - Bundled Runtime
  * 100% Zero Runtime Dependencies • Procedural Audio & WebKit Bridges
- * Generated: 2026-10-24T22:41:29.799Z
+ * Generated: 2026-10-24T22:45:41.213Z
  */
 (() => {
   'use strict';

@@ -3,6 +3,19 @@
   "version": "1.0.0",
   "description": "Zero-dependency iOS-first Progressive Web App design system, hardware bridges, and shared component primitives.",
   "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./style.css": "./style.css",
+    "./*": "./src/*"
+  },
+  "files": [
+    "src",
+    "style.css",
+    "README.md",
+    "app.js"
+  ],
   "scripts": {
     "test": "node scripts/bundle.js && node --test tests/*.test.js",
     "build": "node scripts/bundle.js",
